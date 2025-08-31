@@ -4,31 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>COMPOUND INTEREST — MEME MODE</title>
-  <meta name="description" content="Banks give you 0.01%. We give you daily compounding. Choose wisely.">
+  <meta name="description" content="Banks give 0.01%. We compound daily. Join or stay broke.">
   <meta property="og:title" content="COMPOUND INTEREST — MEME MODE">
-  <meta property="og:description" content="Banks: 0.01% APY. Us: daily gains. Join or stay broke.">
-  <meta property="og:image" content="https://mike-hash-cell.github.io/meme-hero.png">
+  <meta property="og:description" content="Banks: 0.01% APY. Us: daily gains.">
+  <meta property="og:image" content="https://mike-hash-cell.github.io/meme/meme-hero.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="styles.css?v=1">
+  <!-- purple meme theme -->
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
   <!-- Top bar -->
   <header class="bar">
-    <div class="brand">
+    <a class="brand" href="#hero">
+      <!-- Use the meme image as the logo in meme mode -->
       <img class="logo" src="meme-hero.png" alt="CI">
       <span class="wordmark">COMPOUND<br>INTEREST</span>
-    </div>
+    </a>
     <nav class="nav">
       <a href="#hero">Home</a>
-      <a href="#why">Banks 🔻</a>
-      <a href="#win">On-Chain 🟢</a>
+      <a href="#why">Banks 👎</a>
+      <a href="#win">On-Chain 💜</a>
       <a href="#calc">Calculator</a>
       <a class="btn buy" href="#">BUY / JOIN 🚀</a>
     </nav>
   </header>
 
-  <!-- HERO (meme art) -->
+  <!-- HERO -->
   <section id="hero" class="hero">
     <div class="hero-copy">
       <div class="pill">🚀 Daily auto-compounding • 📈 Transparent</div>
@@ -43,7 +45,7 @@
       </div>
     </div>
 
-    <!-- Replace meme-hero.png with any Wojak/Pepe image you like -->
+    <!-- Bright hero art (background pulled from CSS var) -->
     <div class="hero-art" style="--meme:url('meme-hero.png')">
       <div class="raining">
         <span>$</span><span>$</span><span>$</span><span>$</span><span>$</span>
@@ -51,7 +53,7 @@
     </div>
   </section>
 
-  <!-- WHY BANKS MID -->
+  <!-- BANKS VS ON-CHAIN -->
   <section id="why" class="cards">
     <div class="card red">
       <h3>🏦 BANK SAVINGS</h3>
@@ -67,7 +69,7 @@
     <div class="vs">VS</div>
 
     <div id="win" class="card green">
-      <h3>🟢 $COMPOUND ON-CHAIN</h3>
+      <h3>💜 $COMPOUND ON-CHAIN</h3>
       <ul>
         <li><strong>Daily</strong> compounding</li>
         <li>Passive income</li>
