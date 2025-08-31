@@ -157,23 +157,3 @@ input{
   .vs{display:none}
   .calc-grid{grid-template-columns:1fr}
 }
-.ca-banner {
-  margin-top: 14px;
-  font-weight: 900;
-  font-size: 22px;
-  color: #ff4d6d;
-  text-shadow: 0 0 8px rgba(255,77,109,.5);
-}
-
-.ca-sticky {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(90deg,#a78bfa,#c084fc);
-  color: #120b24;
-  font-weight: 900;
-  text-align: center;
-  padding: 10px;
-  font-size: 20px;
-  z-index: 999;
-  box-shadow: 0 -4px 20px rgba(0,0,0,.4);
-}
