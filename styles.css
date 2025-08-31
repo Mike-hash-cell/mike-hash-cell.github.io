@@ -97,3 +97,14 @@ input{width:100%;padding:12px 12px;border-radius:12px;border:1px solid var(--lin
   .calc{grid-template-columns:1fr}
   .stack{width:42vw;height:26vw}
 }
+/* Vintage hero background overlay */
+.banner::before{
+  content:"";
+  position:absolute; inset:0;
+  background:url("assets/compound-vintage.png") center/cover no-repeat;
+  opacity:.22;           /* adjust 0.15–0.35 */
+  filter:contrast(1.05) sepia(.2);
+  mix-blend-mode:overlay; /* keeps your gradients + adds texture */
+  pointer-events:none;
+}
+
