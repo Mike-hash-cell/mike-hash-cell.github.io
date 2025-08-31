@@ -10,14 +10,13 @@
   <meta property="og:image" content="https://mike-hash-cell.github.io/meme/meme-hero.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- purple meme theme -->
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
   <!-- Top bar -->
   <header class="bar">
     <a class="brand" href="#hero">
-      <!-- Use the meme image as the logo in meme mode -->
       <img class="logo" src="meme-hero.png" alt="CI">
       <span class="wordmark">COMPOUND<br>INTEREST</span>
     </a>
@@ -43,10 +42,9 @@
         <a class="btn buy huge" href="#">LAUNCH APP</a>
         <a class="btn ghost" href="#calc">Try Calculator</a>
       </div>
-      </div>
+    </div>
 
-
-    <!-- Bright hero art (background pulled from CSS var) -->
+    <!-- Hero art -->
     <div class="hero-art" style="--meme:url('meme-hero.png')">
       <div class="raining">
         <span>$</span><span>$</span><span>$</span><span>$</span><span>$</span>
@@ -119,6 +117,12 @@
     </div>
     <small>© <span id="yr"></span> Compound Interest — Meme Mode.</small>
   </footer>
+
+  <!-- Floating CA bubble -->
+  <div class="ca-bubble" role="status" aria-live="polite">
+    <span class="icon">🚨</span>
+    <span class="text">CA COMING SOON!</span>
+  </div>
 
   <script>
     const fmt = x => new Intl.NumberFormat(undefined,{maximumFractionDigits:2}).format(x);
