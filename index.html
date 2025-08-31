@@ -1,89 +1,161 @@
 <!DOCTYPE html>
-<nav>
-<a href="#about">About</a>
-<a href="#calc">Calculator</a>
-<a href="#tokenomics">Tokenomics</a>
-<a href="#cta" class="cta">Buy / Join</a>
-</nav>
-</div>
-</header>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compound Interest — Earn Daily</title>
+  <meta name="description" content="Invest today and earn daily compounding rewards automatically transferred to your wallet." />
 
+  <!-- All‑in‑one (single file). No external assets. Works perfectly on GitHub Pages. -->
+  <style>
+    :root{
+      --bg:#0b1220;--panel:#0f172a;--line:#21304a;--text:#e8eefc;--muted:#9fb0d1;--accent:#ffd34d;--accent2:#ffb703;--good:#22c55e;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 900px at 20% -10%, #16213a 0%, var(--bg) 55%);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Inter, Roboto, Arial, sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:20px}
 
-<!-- Main content -->
-<main class="wrap">
-<section class="hero" id="about">
-<div>
-<div class="badge">🚀 Daily auto‑compounding • 📈 On‑chain transparency</div>
-<h1 class="headline">Invest today and watch your balance grow <span style="color:var(--accent)">daily</span>.</h1>
-<p class="sub">Earn automatic interest transferred straight to your account every day. The earlier you start, the faster the compounding effect multiplies your rewards.</p>
-<div style="display:flex;gap:12px;margin-top:14px">
-<a id="cta" class="cta" href="#">Launch App</a>
-<a class="cta" style="background:transparent;color:var(--text);border:1px solid var(--line)" href="#whitepaper">Whitepaper</a>
-</div>
-</div>
-<div class="banner" aria-label="Compound growth banner">
-<div class="stacks">
-<div class="stack"></div>
-<div class="stack"></div>
-<div class="stack"></div>
-</div>
-</div>
-</section>
+    /* HEADER */
+    header{position:sticky;top:0;z-index:20;backdrop-filter:saturate(120%) blur(6px);background:rgba(11,18,32,.7);border-bottom:1px solid var(--line)}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .coin{width:42px;height:42px;border-radius:50%;background:linear-gradient(145deg,#f7d36a,#b8860b);box-shadow:0 0 0 3px rgba(255,211,77,.25),0 8px 30px rgba(0,0,0,.35);display:grid;place-items:center;color:#1a1a1a}
+    nav{display:flex;gap:18px;font-weight:600;color:#d8e2ff}
+    .cta{background:linear-gradient(180deg,var(--accent),var(--accent2));color:#1a1a1a;border:0;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer;box-shadow:0 8px 20px rgba(255,211,77,.25)}
 
+    /* HERO + BANNER */
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;padding:28px 0}
+    .headline{font-size:clamp(28px,4.2vw,56px);font-weight:900;letter-spacing:.2px;margin:0 0 6px}
+    .sub{color:var(--muted);margin:8px 0 0;max-width:60ch}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);backdrop-filter:blur(6px);margin:12px 0;color:#dfe6ff}
 
-<section class="grid">
-<div class="card"><h3>💸 Daily Payouts</h3><p class="muted">Rewards stream to your wallet every 24h — no manual claiming needed.</p></div>
-<div class="card"><h3>🔒 Non‑custodial</h3><p class="muted">You keep control of your keys; contracts handle the math.</p></div>
-<div class="card"><h3>⚡ Gas‑efficient</h3><p class="muted">Optimized compounding to minimize fees while maximizing growth.</p></div>
-</section>
+    .banner{width:100%;aspect-ratio:3/1;min-height:180px;border-radius:18px;background:linear-gradient(120deg,#1a2544,#0f172a 40%,#1e293b);border:1px solid var(--line);position:relative;overflow:hidden}
+    .banner::after{content:"";position:absolute;inset:0;background:
+      radial-gradient(600px 280px at 15% 90%, rgba(255,211,77,.18), transparent 60%),
+      radial-gradient(600px 280px at 85% 10%, rgba(34,197,94,.16), transparent 60%)}
+    .stacks{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:60px}
+    .stack{width:min(200px,28vw);height:min(130px,18vw);border-radius:16px;background:rgba(255,211,77,.10);border:1px solid rgba(255,211,77,.28);box-shadow:0 12px 30px rgba(0,0,0,.35);position:relative;animation:rise 4s ease-in-out infinite}
+    .stack:before{content:"$";position:absolute;top:8px;left:12px;font-weight:900;color:#ffd34d}
+    .stack:nth-child(1){animation-delay:0s}
+    .stack:nth-child(2){transform:translateY(-12px) scale(1.08);animation-delay:.6s}
+    .stack:nth-child(3){transform:translateY(12px) scale(.94);animation-delay:1.2s}
+    @keyframes rise{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-10px) scale(1.03)}}
 
+    /* FEATURES */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00));border:1px solid var(--line);border-radius:16px;padding:16px}
+    .card h3{margin:0 0 8px 0}
 
-<section class="calc" id="calc">
-<div class="panel">
-<h2>📊 Compound Calculator</h2>
-<label for="principal">Initial Amount</label>
-<input id="principal" type="number" value="1000" min="0" />
-<label for="rate">Daily Rate (%)</label>
-<input id="rate" type="number" value="0.5" step="0.01" />
-<label for="days">Days</label>
-<input id="days" type="number" value="60" min="1" />
-<div style="margin-top:12px" class="muted">Formula: A = P × (1 + r)<sup>n</sup></div>
-<div style="margin-top:16px" class="out">Projected Balance: <span id="result">—</span></div>
-</div>
-<div class="panel" id="tokenomics">
-<h2>🧩 Tokenomics</h2>
-<ul>
-<li>Supply: 1,000,000,000 CI</li>
-<li>Liquidity: 60%</li>
-<li>Treasury/Rewards: 25%</li>
-<li>Team (vested): 10%</li>
-<li>Marketing: 5%</li>
-</ul>
-<p class="muted">Numbers are placeholders — tweak to your actual plan.</p>
-</div>
-</section>
-</main>
+    /* CALCULATOR */
+    .calc{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;margin:20px 0}
+    .panel{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:16px;padding:16px}
+    label{display:block;font-size:14px;color:#cbd5e1;margin:8px 0 6px}
+    input{width:100%;padding:12px 12px;border-radius:12px;border:1px solid var(--line);background:#0f1529;color:var(--text)}
+    .out{font-size:20px;font-weight:800}
+    .muted{color:var(--muted)}
 
+    /* FOOTER */
+    footer{border-top:1px dashed var(--line);margin-top:28px;padding:18px 0;color:#c5d0ff}
 
-<!-- Footer -->
-<footer class="wrap">
-<small>© <span id="yr"></span> Compound Interest. All rights reserved. • <a href="#">Docs</a> • <a href="#">Audit</a></small>
-</footer>
+    @media (max-width:900px){
+      nav{display:none}
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .calc{grid-template-columns:1fr}
+      .stack{width:42vw;height:26vw}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="bar wrap">
+      <div class="brand">
+        <div class="coin" aria-hidden>CI</div>
+        <strong>Compound Interest</strong>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#calc">Calculator</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#cta" class="cta">Buy / Join</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Main content -->
+  <main class="wrap">
+    <section class="hero" id="about">
+      <div>
+        <div class="badge">🚀 Daily auto‑compounding • 📈 On‑chain transparency</div>
+        <h1 class="headline">Invest today and watch your balance grow <span style="color:var(--accent)">daily</span>.</h1>
+        <p class="sub">Earn automatic interest transferred straight to your account every day. The earlier you start, the faster the compounding effect multiplies your rewards.</p>
+        <div style="display:flex;gap:12px;margin-top:14px">
+          <a id="cta" class="cta" href="#">Launch App</a>
+          <a class="cta" style="background:transparent;color:var(--text);border:1px solid var(--line)" href="#whitepaper">Whitepaper</a>
+        </div>
+      </div>
+      <div class="banner" aria-label="Compound growth banner">
+        <div class="stacks">
+          <div class="stack"></div>
+          <div class="stack"></div>
+          <div class="stack"></div>
+        </div>
+      </div>
+    </section>
 
-<!-- JS (inline) -->
-<script>
-const fmt = x => new Intl.NumberFormat(undefined,{maximumFractionDigits:2}).format(x);
-function calc(){
-const P = parseFloat(document.getElementById('principal').value)||0;
-const r = (parseFloat(document.getElementById('rate').value)||0)/100; // daily
-const n = parseInt(document.getElementById('days').value)||0;
-const A = P * Math.pow(1 + r, n);
-document.getElementById('result').textContent = '$' + fmt(A);
-}
-['principal','rate','days'].forEach(id=>document.getElementById(id).addEventListener('input', calc));
-calc();
-document.getElementById('yr').textContent = new Date().getFullYear();
-</script>
+    <section class="grid">
+      <div class="card"><h3>💸 Daily Payouts</h3><p class="muted">Rewards stream to your wallet every 24h — no manual claiming needed.</p></div>
+      <div class="card"><h3>🔒 Non‑custodial</h3><p class="muted">You keep control of your keys; contracts handle the math.</p></div>
+      <div class="card"><h3>⚡ Gas‑efficient</h3><p class="muted">Optimized compounding to minimize fees while maximizing growth.</p></div>
+    </section>
+
+    <section class="calc" id="calc">
+      <div class="panel">
+        <h2>📊 Compound Calculator</h2>
+        <label for="principal">Initial Amount</label>
+        <input id="principal" type="number" value="1000" min="0" />
+        <label for="rate">Daily Rate (%)</label>
+        <input id="rate" type="number" value="0.5" step="0.01" />
+        <label for="days">Days</label>
+        <input id="days" type="number" value="60" min="1" />
+        <div style="margin-top:12px" class="muted">Formula: A = P × (1 + r)<sup>n</sup></div>
+        <div style="margin-top:16px" class="out">Projected Balance: <span id="result">—</span></div>
+      </div>
+      <div class="panel" id="tokenomics">
+        <h2>🧩 Tokenomics</h2>
+        <ul>
+          <li>Supply: 1,000,000,000 CI</li>
+          <li>Liquidity: 60%</li>
+          <li>Treasury/Rewards: 25%</li>
+          <li>Team (vested): 10%</li>
+          <li>Marketing: 5%</li>
+        </ul>
+        <p class="muted">Numbers are placeholders — tweak to your actual plan.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="wrap">
+    <small>© <span id="yr"></span> Compound Interest. All rights reserved. • <a href="#">Docs</a> • <a href="#">Audit</a></small>
+  </footer>
+
+  <!-- JS (inline) -->
+  <script>
+    const fmt = x => new Intl.NumberFormat(undefined,{maximumFractionDigits:2}).format(x);
+    function calc(){
+      const P = parseFloat(document.getElementById('principal').value)||0;
+      const r = (parseFloat(document.getElementById('rate').value)||0)/100; // daily
+      const n = parseInt(document.getElementById('days').value)||0;
+      const A = P * Math.pow(1 + r, n);
+      document.getElementById('result').textContent = '$' + fmt(A);
+    }
+    ['principal','rate','days'].forEach(id=>document.getElementById(id).addEventListener('input', calc));
+    calc();
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
