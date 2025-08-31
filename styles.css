@@ -59,11 +59,10 @@ a{color:inherit;text-decoration:none}
 .accent{color:var(--accent)}
 .btns{display:flex; gap:12px; margin-top:14px}
 
-/* Hero art using your vintage image */
+/* Hero art using your vintage image (absolute URL passed via inline CSS var) */
 .hero-art{
   position:relative;
-  border-radius:18px;
-  min-height:320px;
+  border-radius:18px; min-height:320px;
   background:radial-gradient(600px 300px at 20% 80%, rgba(255,211,77,.14), transparent 60%),
              radial-gradient(600px 300px at 80% 10%, rgba(34,197,94,.12), transparent 60%),
              #0f172a;
@@ -71,17 +70,21 @@ a{color:inherit;text-decoration:none}
   overflow:hidden;
   box-shadow:0 12px 28px rgba(0,0,0,.35);
 }
-.hero-badge{
+/* draw the actual image */
+.hero-art::before{
+  content:"";
   position:absolute; inset:0;
-  width:100%; height:100%; object-fit:cover; object-position:center;
+  background-image: var(--hero-img);
+  background-position:center; background-size:cover; background-repeat:no-repeat;
   filter:sepia(.35) contrast(1.05) brightness(.95);
-  opacity:.28;          /* Adjust: 0.18–0.45 depending on taste */
+  opacity:.30;                  /* tweak 0.18–0.45 */
   mix-blend-mode:multiply;
 }
+/* soft lighting overlay */
 .hero-overlay{
   position:absolute; inset:0; pointer-events:none;
   background:
-    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.1) 35%, transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.08) 40%, transparent 65%),
     radial-gradient(1200px 600px at 50% -10%, rgba(255,255,255,.05), transparent 60%);
 }
 
