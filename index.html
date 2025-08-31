@@ -6,15 +6,15 @@
   <title>Compound Interest — Earn Daily</title>
   <meta name="description" content="Invest today and earn daily compounding rewards automatically transferred to your wallet." />
 
-  <!-- Social (update URL if you rename the image) -->
+  <!-- Social preview -->
   <meta property="og:title" content="Compound Interest — Earn Daily" />
   <meta property="og:description" content="Invest today and earn daily compounding rewards automatically transferred to your wallet." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://mike-hash-cell.github.io/assets/compound-vintage.png" />
+  <meta property="og:image" content="https://mike-hash-cell.github.io/compound-vintage.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Cache-bust the CSS by bumping the ?v number after edits -->
-  <link rel="stylesheet" href="styles.css?v=5">
+  <!-- CSS (bump the v number whenever you change styles) -->
+  <link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
   <!-- Header -->
@@ -22,7 +22,6 @@
     <div class="wrap bar">
       <a class="brand" href="#">
         <div class="coin-img">
-          <!-- Uses your vintage badge as the logo too -->
           <img src="compound-vintage.png" alt="Compound Interest emblem">
         </div>
         <strong>Compound Interest</strong>
@@ -49,11 +48,14 @@
         </div>
       </div>
 
-      <!-- Path-proof hero art (uses absolute URL + CSS var) -->
-<div class="hero-art" style="--hero-img:url('https://mike-hash-cell.github.io/compound-vintage.png')" role="img" aria-label="Compound Interest vintage emblem background">
-  <div class="hero-overlay"></div>
-</div>
-
+      <!-- BRIGHT hero art with your vintage image -->
+      <div
+        class="hero-art"
+        style="--hero-img:url('compound-vintage.png')"
+        role="img"
+        aria-label="Compound Interest vintage emblem background">
+        <div class="hero-overlay"></div>
+      </div>
     </div>
   </section>
 
