@@ -1,12 +1,31 @@
-<html lang="en">
+<!DOCTYPE html>
+<nav>
+<a href="#about">About</a>
+<a href="#calc">Calculator</a>
+<a href="#tokenomics">Tokenomics</a>
+<a href="#cta" class="cta">Buy / Join</a>
+</nav>
+</div>
+</header>
+
+
+<!-- Main content -->
+<main class="wrap">
+<section class="hero" id="about">
+<div>
+<div class="badge">🚀 Daily auto‑compounding • 📈 On‑chain transparency</div>
+<h1 class="headline">Invest today and watch your balance grow <span style="color:var(--accent)">daily</span>.</h1>
+<p class="sub">Earn automatic interest transferred straight to your account every day. The earlier you start, the faster the compounding effect multiplies your rewards.</p>
+<div style="display:flex;gap:12px;margin-top:14px">
+<a id="cta" class="cta" href="#">Launch App</a>
 <a class="cta" style="background:transparent;color:var(--text);border:1px solid var(--line)" href="#whitepaper">Whitepaper</a>
 </div>
 </div>
 <div class="banner" aria-label="Compound growth banner">
 <div class="stacks">
 <div class="stack"></div>
-<div class="stack big"></div>
-<div class="stack" style="transform:translateY(14px) scale(.92)"></div>
+<div class="stack"></div>
+<div class="stack"></div>
 </div>
 </div>
 </section>
@@ -43,18 +62,16 @@
 <p class="muted">Numbers are placeholders — tweak to your actual plan.</p>
 </div>
 </section>
+</main>
 
 
-<footer>
+<!-- Footer -->
+<footer class="wrap">
 <small>© <span id="yr"></span> Compound Interest. All rights reserved. • <a href="#">Docs</a> • <a href="#">Audit</a></small>
 </footer>
-</div>
 
 
-<!-- Simple deploy helper strip to show the current Pages URL -->
-<div class="deploy"><span>Deployed URL:</span><code id="url">—</code></div>
-
-
+<!-- JS (inline) -->
 <script>
 const fmt = x => new Intl.NumberFormat(undefined,{maximumFractionDigits:2}).format(x);
 function calc(){
@@ -67,11 +84,6 @@ document.getElementById('result').textContent = '$' + fmt(A);
 ['principal','rate','days'].forEach(id=>document.getElementById(id).addEventListener('input', calc));
 calc();
 document.getElementById('yr').textContent = new Date().getFullYear();
-
-
-// Show the exact URL this file is served from (helps with GitHub Pages paths)
-const path = location.pathname.endsWith('/')? location.pathname : location.pathname + '/';
-document.getElementById('url').textContent = location.origin + location.pathname;
 </script>
 </body>
 </html>
