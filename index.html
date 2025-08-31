@@ -4,17 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Compound Interest — Earn Daily</title>
-  <meta name="description" content="Invest today and earn daily compounding rewards automatically transferred to your wallet.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Invest today and earn daily compounding rewards automatically transferred to your wallet." />
+
+  <!-- Social (update URL if you rename the image) -->
+  <meta property="og:title" content="Compound Interest — Earn Daily" />
+  <meta property="og:description" content="Invest today and earn daily compounding rewards automatically transferred to your wallet." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://mike-hash-cell.github.io/assets/compound-vintage.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Cache-bust the CSS by bumping the ?v number after edits -->
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <!-- Header -->
   <header class="header">
     <div class="wrap bar">
-      <div class="brand">
-        <div class="coin" aria-hidden>CI</div>
+      <a class="brand" href="#">
+        <div class="coin-img">
+          <!-- Uses your vintage badge as the logo too -->
+          <img src="assets/compound-vintage.png" alt="Compound Interest emblem">
+        </div>
         <strong>Compound Interest</strong>
-      </div>
+      </a>
       <nav class="nav">
         <a href="#about">About</a>
         <a href="#calc">Calculator</a>
@@ -24,10 +36,10 @@
     </div>
   </header>
 
-  <!-- Main -->
-  <main class="wrap">
-    <section class="hero" id="about">
-      <div>
+  <!-- Hero -->
+  <section class="hero" id="about" aria-label="Hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
         <div class="badge">🚀 Daily auto-compounding • 📈 On-chain transparency</div>
         <h1 class="headline">Invest today and watch your balance grow <span class="accent">daily</span>.</h1>
         <p class="sub">Earn automatic interest transferred straight to your account every day. The earlier you start, the faster the compounding effect multiplies your rewards.</p>
@@ -37,48 +49,60 @@
         </div>
       </div>
 
-      <!-- Animated banner -->
-      <div class="banner" aria-label="Compound growth banner">
-        <div class="stacks">
-          <div class="stack"></div>
-          <div class="stack big"></div>
-          <div class="stack small"></div>
-        </div>
+      <!-- Hero art: your vintage image blended into a banner card -->
+      <div class="hero-art" role="img" aria-label="Compound Interest vintage emblem background">
+        <img class="hero-badge" src="assets/compound-vintage.png" alt="Compound Interest vintage badge">
+        <div class="hero-overlay"></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="grid">
-      <div class="card"><h3>💸 Daily Payouts</h3><p class="muted">Rewards stream to your wallet every 24h — no manual claiming needed.</p></div>
-      <div class="card"><h3>🔒 Non-custodial</h3><p class="muted">You keep control of your keys; contracts handle the math.</p></div>
-      <div class="card"><h3>⚡ Gas-efficient</h3><p class="muted">Optimized compounding to minimize fees while maximizing growth.</p></div>
-    </section>
+  <!-- Feature cards -->
+  <section class="wrap grid">
+    <div class="card">
+      <h3>💸 Daily Payouts</h3>
+      <p class="muted">Rewards stream to your wallet every 24h — no manual claiming needed.</p>
+    </div>
+    <div class="card">
+      <h3>🔒 Non-custodial</h3>
+      <p class="muted">You keep control of your keys; contracts handle the math.</p>
+    </div>
+    <div class="card">
+      <h3>⚡ Gas-efficient</h3>
+      <p class="muted">Optimized compounding to minimize fees while maximizing growth.</p>
+    </div>
+  </section>
 
-    <section class="calc" id="calc">
-      <div class="panel">
-        <h2>📊 Compound Calculator</h2>
-        <label for="principal">Initial Amount</label>
-        <input id="principal" type="number" value="1000" min="0" />
-        <label for="rate">Daily Rate (%)</label>
-        <input id="rate" type="number" value="0.5" step="0.01" />
-        <label for="days">Days</label>
-        <input id="days" type="number" value="60" min="1" />
-        <div class="muted mt">Formula: A = P × (1 + r)<sup>n</sup></div>
-        <div class="out mt">Projected Balance: <span id="result">—</span></div>
-      </div>
+  <!-- Calculator + Tokenomics -->
+  <section class="wrap calc">
+    <div class="panel">
+      <h2>📊 Compound Calculator</h2>
 
-      <div class="panel" id="tokenomics">
-        <h2>🧩 Tokenomics</h2>
-        <ul>
-          <li>Supply: 1,000,000,000 CI</li>
-          <li>Liquidity: 60%</li>
-          <li>Treasury/Rewards: 25%</li>
-          <li>Team (vested): 10%</li>
-          <li>Marketing: 5%</li>
-        </ul>
-        <p class="muted">Numbers are placeholders — tweak to your actual plan.</p>
-      </div>
-    </section>
-  </main>
+      <label for="principal">Initial Amount</label>
+      <input id="principal" type="number" value="1000" min="0" />
+
+      <label for="rate">Daily Rate (%)</label>
+      <input id="rate" type="number" value="0.5" step="0.01" />
+
+      <label for="days">Days</label>
+      <input id="days" type="number" value="60" min="1" />
+
+      <div class="muted mt">Formula: A = P × (1 + r)<sup>n</sup></div>
+      <div class="out mt">Projected Balance: <span id="result">—</span></div>
+    </div>
+
+    <div class="panel" id="tokenomics">
+      <h2>🧩 Tokenomics</h2>
+      <ul>
+        <li>Supply: 1,000,000,000 CI</li>
+        <li>Liquidity: 60%</li>
+        <li>Treasury/Rewards: 25%</li>
+        <li>Team (vested): 10%</li>
+        <li>Marketing: 5%</li>
+      </ul>
+      <p class="muted">Numbers are placeholders — tweak to your actual plan.</p>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="wrap footer">
