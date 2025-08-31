@@ -1,18 +1,4 @@
 <html lang="en">
-<a href="#calc">Calculator</a>
-<a href="#tokenomics">Tokenomics</a>
-<a href="#cta" class="cta">Buy / Join</a>
-</nav>
-</header>
-
-
-<section class="hero" id="about">
-<div>
-<div class="badge">🚀 Daily auto-compounding • 📈 On-chain transparency</div>
-<h1 class="headline">Invest today and watch your balance grow <span style="color:var(--accent)">daily</span>.</h1>
-<p class="sub">Earn automatic interest transferred straight to your account every day. The earlier you start, the faster the compounding effect multiplies your rewards.</p>
-<div style="display:flex;gap:12px;margin-top:14px">
-<a id="cta" class="cta" href="#">Launch App</a>
 <a class="cta" style="background:transparent;color:var(--text);border:1px solid var(--line)" href="#whitepaper">Whitepaper</a>
 </div>
 </div>
@@ -36,13 +22,13 @@
 <section class="calc" id="calc">
 <div class="panel">
 <h2>📊 Compound Calculator</h2>
-<label>Initial Amount</label>
+<label for="principal">Initial Amount</label>
 <input id="principal" type="number" value="1000" min="0" />
-<label>Daily Rate (%)</label>
+<label for="rate">Daily Rate (%)</label>
 <input id="rate" type="number" value="0.5" step="0.01" />
-<label>Days</label>
+<label for="days">Days</label>
 <input id="days" type="number" value="60" min="1" />
-<div style="margin-top:12px" class="muted">Formula: A = P × (1 + r)ⁿ</div>
+<div style="margin-top:12px" class="muted">Formula: A = P × (1 + r)<sup>n</sup></div>
 <div style="margin-top:16px" class="out">Projected Balance: <span id="result">—</span></div>
 </div>
 <div class="panel" id="tokenomics">
@@ -65,6 +51,10 @@
 </div>
 
 
+<!-- Simple deploy helper strip to show the current Pages URL -->
+<div class="deploy"><span>Deployed URL:</span><code id="url">—</code></div>
+
+
 <script>
 const fmt = x => new Intl.NumberFormat(undefined,{maximumFractionDigits:2}).format(x);
 function calc(){
@@ -77,6 +67,11 @@ document.getElementById('result').textContent = '$' + fmt(A);
 ['principal','rate','days'].forEach(id=>document.getElementById(id).addEventListener('input', calc));
 calc();
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+
+// Show the exact URL this file is served from (helps with GitHub Pages paths)
+const path = location.pathname.endsWith('/')? location.pathname : location.pathname + '/';
+document.getElementById('url').textContent = location.origin + location.pathname;
 </script>
 </body>
 </html>
