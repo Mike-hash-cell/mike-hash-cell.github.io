@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COMPOUND INTEREST — MEME MODE</title>
+  <meta name="description" content="Banks give you 0.01%. We give you daily compounding. Choose wisely.">
+  <meta property="og:title" content="COMPOUND INTEREST — MEME MODE">
+  <meta property="og:description" content="Banks: 0.01% APY. Us: daily gains. Join or stay broke.">
+  <meta property="og:image" content="https://mike-hash-cell.github.io/compound-vintage.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="bar">
+    <div class="brand">
+      <img class="logo" src="../compound-vintage.png" alt="CI">
+      <span class="wordmark">COMPOUND<br>INTEREST</span>
+    </div>
+    <nav class="nav">
+      <a href="#hero">Home</a>
+      <a href="#why">Banks 🔻</a>
+      <a href="#win">On-Chain 🟢</a>
+      <a href="#calc">Calculator</a>
+      <a class="btn buy" href="#">BUY / JOIN 🚀</a>
+    </nav>
+  </header>
+
+  <!-- HERO (meme art) -->
+  <section id="hero" class="hero">
+    <div class="hero-copy">
+      <div class="pill">🚀 Daily auto-compounding • 📈 Transparent</div>
+      <h1 class="big">
+        BANKS PAY <span class="strike">0.01%</span><br>
+        WE PAY <span class="pop">DAILY</span>
+      </h1>
+      <p class="sub">Stop being poor. Start compounding. Interest to your wallet, every day. No cap, only bags.</p>
+      <div class="cta-row">
+        <a class="btn buy huge" href="#">LAUNCH APP</a>
+        <a class="btn ghost" href="#calc">Try Calculator</a>
+      </div>
+    </div>
+
+    <!-- Replace meme-hero.png with any Wojak/Pepe image you like -->
+    <div class="hero-art" style="--meme:url('meme-hero.png')">
+      <div class="raining">
+        <span>$</span><span>$</span><span>$</span><span>$</span><span>$</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY BANKS MID -->
+  <section id="why" class="cards">
+    <div class="card red">
+      <h3>🏦 BANK SAVINGS</h3>
+      <ul>
+        <li>Inflation eats your cash</li>
+        <li>Taxes & hidden fees</li>
+        <li>Near-zero APY <strong>0.01%</strong></li>
+        <li>Centralized & slow</li>
+      </ul>
+      <div class="stamp">MID</div>
+    </div>
+
+    <div class="vs">VS</div>
+
+    <div id="win" class="card green">
+      <h3>🟢 $COMPOUND ON-CHAIN</h3>
+      <ul>
+        <li><strong>Daily</strong> compounding</li>
+        <li>Passive income</li>
+        <li>Inflation hedge</li>
+        <li>Community powered</li>
+        <li>Transparent AF</li>
+      </ul>
+      <div class="stamp win">W</div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section id="calc" class="calc">
+    <h2 class="calc-title">🧮 Degenerate but Correct Calculator</h2>
+    <div class="calc-grid">
+      <div class="calc-panel">
+        <label>Initial Amount</label>
+        <input id="principal" type="number" value="1000" min="0">
+
+        <label>Daily Rate (%)</label>
+        <input id="rate" type="number" value="0.5" step="0.01">
+
+        <label>Days</label>
+        <input id="days" type="number" value="60" min="1">
+
+        <div class="note">Formula: A = P × (1 + r)<sup>n</sup></div>
+        <div class="out">Projected Balance: <span id="result">—</span></div>
+      </div>
+
+      <div class="calc-meme">
+        <div class="callout">
+          If banks give you <span class="tiny">0.01%</span>… why are you still there? 🤡
+        </div>
+        <div class="badge">COMPOUND. EVERY. DAY.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="links">
+      <a href="../">Pro version</a>
+      <a href="#">Twitter</a>
+      <a href="#">Telegram</a>
+      <a href="#">Docs</a>
+    </div>
+    <small>© <span id="yr"></span> Compound Interest — Meme Mode.</small>
+  </footer>
+
+  <script>
+    const fmt = x => new Intl.NumberFormat(undefined,{maximumFractionDigits:2}).format(x);
+    function calc(){
+      const P = parseFloat(document.getElementById('principal').value)||0;
+      const r = (parseFloat(document.getElementById('rate').value)||0)/100;
+      const n = parseInt(document.getElementById('days').value)||0;
+      const A = P * Math.pow(1 + r, n);
+      document.getElementById('result').textContent = '$' + fmt(A);
+    }
+    ['principal','rate','days'].forEach(id=>document.getElementById(id).addEventListener('input', calc));
+    calc();
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
