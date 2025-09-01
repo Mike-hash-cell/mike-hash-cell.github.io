@@ -207,3 +207,55 @@ input{
   .ca-bubble{left:50%; right:auto; transform:translateX(-50%)}
   .ca-bubble:hover{transform:translateX(-50%) translateY(-2px) scale(1.05)}
 }
+/* American Spirit */
+.spirit{
+  max-width:1180px;
+  margin:36px auto;
+  padding:0 18px 40px;
+  position:relative;
+  text-align:center;
+}
+.spirit::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    url('usa-banner.png') center/cover no-repeat;
+  opacity:.12;
+  z-index:-1;
+}
+.spirit-wrap{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:20px;
+}
+.pillar{
+  background:linear-gradient(180deg,#141c3d,#0d1533);
+  border:2px solid var(--line);
+  border-radius:18px;
+  padding:24px 16px;
+  box-shadow:var(--shadow);
+}
+.pillar .icon{
+  font-size:40px;
+  margin-bottom:12px;
+  text-shadow:0 0 10px rgba(255,207,87,.4);
+}
+.pillar h3{
+  font-family:Cinzel,serif;
+  font-weight:900;
+  color:var(--gold);
+  margin:0 0 10px;
+}
+.pillar p{color:#d0d8ff}
+.spirit-cta{
+  margin-top:30px;
+}
+.spirit-cta .btn.huge{
+  font-size:22px;
+  padding:14px 26px;
+}
+@media(max-width:980px){
+  .spirit-wrap{grid-template-columns:1fr}
+}
