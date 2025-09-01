@@ -3,161 +3,185 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PEPE COIN — USA EDITION</title>
-  <meta name="description" content="Official Pepe Coin. The People's Coin. Daily compounding, degen energy, freedom vibes.">
-  <meta property="og:title" content="PEPE COIN — USA EDITION">
-  <meta property="og:description" content="Official Pepe Coin. The People's Coin.">
-  <meta property="og:image" content="https://mike-hash-cell.github.io/pepe/pepe-hero.png">
+  <title>Official PEPE COIN — Liberty Edition 🇺🇸</title>
+  <meta name="description" content="The People’s Coin. Liberty, transparency, and daily rewards.">
+  <meta property="og:title" content="Official PEPE COIN — Liberty Edition">
+  <meta property="og:description" content="Freedom money for free people.">
+  <meta property="og:image" content="https://mike-hash-cell.github.io/usa/usa-hero.png">
   <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Patriotic typefaces -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=1">
 </head>
 <body>
 
-  <!-- Top bar -->
-  <header class="bar">
-    <a class="brand" href="#hero" aria-label="Pepe Coin Home">
-      <img class="logo" src="pepe-hero.png" alt="Pepe Coin">
-      <span class="wordmark">PEPE<br>COIN</span>
+  <!-- Top ribbon -->
+  <div class="top-ribbon">
+    <span>In Code We Trust</span>
+    <span>Sound Money • Open Markets • Free People</span>
+  </div>
+
+  <!-- Header (independent look) -->
+  <header class="mast">
+    <a class="brand" href="#hero" aria-label="Home">
+      <img src="usa-hero.png" alt="Pepe Coin" class="seal">
+      <div class="lockup">
+        <div class="title">PEPE COIN</div>
+        <div class="subtitle">LIBERTY EDITION</div>
+      </div>
     </a>
+
     <nav class="nav">
       <a href="#hero">Home</a>
-      <a href="#why">Banks 👎</a>
-      <a href="#win">On-Chain 🦅</a>
+      <a href="#principles">Principles</a>
       <a href="#calc">Calculator</a>
-      <a class="btn buy" href="#">BUY / JOIN 🚀</a>
+      <a class="btn buy" href="#">BUY / JOIN</a>
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero: waving flag + golden headline -->
   <section id="hero" class="hero">
     <div class="hero-copy">
-      <div class="pill">🎇 The People’s Coin • 🧾 On-chain Transparency</div>
-      <h1 class="big">
-        OFFICIAL <span class="gold">PEPE COIN</span><br>
-        <span class="flag">USA</span> EDITION
+      <h1>
+        THE PEOPLE’S COIN<br>
+        <span class="gold">FOR THE LAND OF THE FREE</span>
       </h1>
-      <p class="sub">
-        Freedom money for freedom people. Auto-compounded rewards to your wallet, every day.
+      <p class="lead">
+        A patriotic token for builders and believers. Transparent contracts,
+        community governance, and a rewards system that salutes you daily.
       </p>
-      <div class="cta-row">
+
+      <div class="cta">
         <a class="btn buy huge" href="#">LAUNCH APP</a>
-        <a class="btn ghost" href="#calc">Try Calculator</a>
+        <a class="btn ghost" href="#calc">Open Calculator</a>
       </div>
 
-      <!-- 👀 Visitors pill -->
-      <div class="visits-pill">👀 <span id="visitCount">—</span> patriots visited</div>
+      <!-- public hype counter -->
+      <div class="visits">👀 <span id="visitCount">—</span> citizens visited</div>
     </div>
 
-    <!-- Hero art uses wide banner if available, else the portrait -->
-    <div class="hero-art" style="--hero:url('pepe-banner.png'), url('pepe-hero.png')">
-      <div class="fireworks">
-        <span>🎆</span><span>🎇</span><span>✨</span><span>🧨</span>
+    <div class="hero-art" style="--banner:url('usa-banner.png'), url('usa-hero.png')">
+      <div class="eagle">🦅</div>
+      <div class="stars">
+        <i>*</i><i>*</i><i>*</i><i>*</i><i>*</i><i>*</i>
       </div>
+    </div>
+
+    <!-- animated waving flag background -->
+    <div class="flag">
+      <div class="canton">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+      <div class="stripes"></div>
     </div>
   </section>
 
-  <!-- BANKS VS ON-CHAIN -->
-  <section id="why" class="cards">
-    <div class="card red">
-      <h3>🏦 BANK SAVINGS</h3>
-      <ul>
-        <li>Inflation eats your cash</li>
-        <li>Taxes & hidden fees</li>
-        <li>Near-zero APY <strong>0.01%</strong></li>
-        <li>Centralized & slow</li>
-      </ul>
-      <div class="stamp">MID</div>
-    </div>
+  <!-- Principles: Liberty / Transparency / Strength -->
+  <section id="principles" class="principles">
+    <article class="card">
+      <div class="icon">🗽</div>
+      <h3>Liberty</h3>
+      <p>Self-custody by default. Your keys, your rights, your winnings.</p>
+    </article>
 
-    <div class="vs">VS</div>
+    <article class="card">
+      <div class="icon">🔎</div>
+      <h3>Transparency</h3>
+      <p>Open contracts, open audits, and an open ledger that never sleeps.</p>
+    </article>
 
-    <div id="win" class="card blue">
-      <h3>🦅 PEPE ON-CHAIN</h3>
-      <ul>
-        <li><strong>Daily</strong> compounding</li>
-        <li>Passive income</li>
-        <li>Inflation hedge</li>
-        <li>Community powered</li>
-        <li>Transparent AF</li>
-      </ul>
-      <div class="stamp win">W</div>
-    </div>
+    <article class="card">
+      <div class="icon">🦅</div>
+      <h3>Strength</h3>
+      <p>Daily compounding rewards designed to scale with the community.</p>
+    </article>
   </section>
 
-  <!-- CALCULATOR -->
+  <!-- Calculator -->
   <section id="calc" class="calc">
-    <h2 class="calc-title">🧮 Freedom Calculator</h2>
-    <div class="calc-grid">
-      <div class="calc-panel">
+    <h2 class="section-title">Freedom Calculator</h2>
+    <div class="calc-wrap">
+      <div class="panel">
         <label>Initial Amount</label>
         <input id="principal" type="number" value="1000" min="0">
-
         <label>Daily Rate (%)</label>
         <input id="rate" type="number" value="0.5" step="0.01">
-
         <label>Days</label>
         <input id="days" type="number" value="60" min="1">
-
-        <div class="note">Formula: A = P × (1 + r)<sup>n</sup></div>
-        <div class="out">Projected Balance: <span id="result">—</span></div>
+        <div class="note">A = P × (1 + r)<sup>n</sup></div>
+        <div class="result">Projected Balance: <strong id="result">—</strong></div>
       </div>
 
-      <div class="calc-meme">
-        <div class="callout">
-          Banks pay <span class="tiny">0.01%</span>. Pepe pays <strong>daily</strong>. 🇺🇸
-        </div>
-        <div class="badge">LET FREEDOM COMPOUND</div>
-      </div>
+      <aside class="aside">
+        <div class="ribbon">OFFICIAL • PEPE • COIN</div>
+        <p class="aside-copy">
+          Banks pay <span class="slash">0.01%</span>. We salute you
+          <strong>every day</strong>. Let freedom compound.
+        </p>
+      </aside>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="foot">
-    <div class="links">
-      <a href="../">Back to main</a>
-      <a href="#">Twitter</a>
-      <a href="#">Telegram</a>
-      <a href="#">Docs</a>
+    <div class="grid">
+      <div>
+        <div class="foot-title">Resources</div>
+        <a href="#">Whitepaper</a>
+        <a href="#">Audit</a>
+        <a href="#">Brand Kit</a>
+      </div>
+      <div>
+        <div class="foot-title">Community</div>
+        <a href="#">Twitter</a>
+        <a href="#">Telegram</a>
+        <a href="#">Discord</a>
+      </div>
+      <div>
+        <div class="foot-title">More</div>
+        <a href="../">Main Site</a>
+        <a href="../meme/">Meme Mode</a>
+        <a href="#">Terms</a>
+      </div>
     </div>
-    <small>© <span id="yr"></span> Official PEPE COIN — USA Edition.</small>
+    <small>© <span id="yr"></span> PEPE COIN — Liberty Edition. Built in the USA.</small>
   </footer>
 
-  <!-- Floating CA bubble -->
-  <div class="ca-bubble" role="status" aria-live="polite">
-    <span class="icon">🧨</span>
+  <!-- Floating CA bubble (patriotic) -->
+  <button class="ca-bubble" type="button" aria-live="polite">
+    <span class="icon">🎆</span>
     <span class="text">CA COMING SOON!</span>
-  </div>
+  </button>
 
   <script>
+    // Formatting helper
     const fmt = x => new Intl.NumberFormat(undefined,{maximumFractionDigits:2}).format(x);
 
     function calc(){
       const P = parseFloat(document.getElementById('principal').value)||0;
       const r = (parseFloat(document.getElementById('rate').value)||0)/100;
       const n = parseInt(document.getElementById('days').value)||0;
-      const A = P * Math.pow(1 + r, n);
-      document.getElementById('result').textContent = '$' + fmt(A);
+      document.getElementById('result').textContent = '$' + fmt(P*Math.pow(1+r,n));
     }
     ['principal','rate','days'].forEach(id=>document.getElementById(id).addEventListener('input', calc));
     calc();
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // === Visitor counter (starts at 5,000) ===
+    // Visitors counter (starts at 5,000)
     async function updateVisits() {
-      const NS  = 'ci-mikehash-v1';
-      const KEY = 'pepe-visits';
-      // safe create at 5000 (no-op if exists)
+      const NS='liberty-pepe-v1', KEY='usa-visits';
       fetch(`https://api.countapi.xyz/create?namespace=${NS}&key=${KEY}&value=5000`).catch(()=>{});
-      const already = localStorage.getItem('ci_pepe_counted');
-      const endpoint = already ? 'get' : 'hit';
+      const seen = localStorage.getItem('usa_seen');
+      const endpoint = seen ? 'get' : 'hit';
       fetch(`https://api.countapi.xyz/${endpoint}/${NS}/${KEY}`)
-        .then(r => r.json())
-        .then(d => {
-          const el = document.getElementById('visitCount');
-          if (el && d && typeof d.value === 'number') el.textContent = d.value.toLocaleString();
-          if (!already) localStorage.setItem('ci_pepe_counted','1');
-        })
-        .catch(()=>{});
+        .then(r=>r.json())
+        .then(d=>{
+          const el=document.getElementById('visitCount');
+          if(el && d && typeof d.value==='number') el.textContent = d.value.toLocaleString();
+          if(!seen) localStorage.setItem('usa_seen','1');
+        }).catch(()=>{});
     }
     updateVisits();
   </script>
