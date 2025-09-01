@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PEPE COIN — Liberty Edition 🇺🇸</title>
+  <meta name="description" content="The People’s Coin. Liberty, transparency, and daily rewards." />
+  <meta property="og:title" content="PEPE COIN — Liberty Edition" />
+  <meta property="og:description" content="Freedom money for free people." />
+  <meta property="og:image" content="https://mike-hash-cell.github.io/usa/usa-hero.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Patriotic typefaces -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1" />
+</head>
+<body>
+
+  <!-- Top ribbon -->
+  <div class="top-ribbon">
+    <span>In Code We Trust</span>
+    <span>Sound Money • Open Markets • Free People</span>
+  </div>
+
+  <!-- Header -->
+  <header class="mast">
+    <a class="brand" href="#hero" aria-label="Home">
+      <img src="usa-hero.png" alt="Pepe Coin" class="seal" />
+      <div class="lockup">
+        <div class="title">PEPE COIN</div>
+        <div class="subtitle">LIBERTY EDITION</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#hero">Home</a>
+      <a href="#principles">Principles</a>
+      <a href="#calc">Calculator</a>
+      <a class="btn buy" href="#">BUY / JOIN</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-copy">
+      <h1>
+        THE PEOPLE’S COIN<br />
+        <span class="gold">FOR THE LAND OF THE FREE</span>
+      </h1>
+      <p class="lead">
+        A patriotic token for builders and believers. Transparent contracts,
+        community governance, and rewards that salute you daily.
+      </p>
+
+      <div class="cta">
+        <a class="btn buy huge" href="#">LAUNCH APP</a>
+        <a class="btn ghost" href="#calc">Open Calculator</a>
+      </div>
+
+      <!-- 👀 Visitors -->
+      <div class="visits">👀 <span id="visitCount">—</span> citizens visited</div>
+    </div>
+
+    <!-- Uses banner if present, otherwise portrait -->
+    <div class="hero-art" style="--hero:url('usa-banner.png'), url('usa-hero.png')">
+      <div class="eagle">🦅</div>
+      <div class="stars"><i>*</i><i>*</i><i>*</i><i>*</i><i>*</i><i>*</i></div>
+    </div>
+
+    <!-- Animated flag background (pure CSS) -->
+    <div class="flag">
+      <div class="canton">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+      <div class="stripes"></div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section id="principles" class="principles">
+    <article class="card">
+      <div class="icon">🗽</div>
+      <h3>Liberty</h3>
+      <p>Self-custody by default. Your keys, your rights, your winnings.</p>
+    </article>
+
+    <article class="card">
+      <div class="icon">🔎</div>
+      <h3>Transparency</h3>
+      <p>Open contracts, open audits, and an open ledger that never sleeps.</p>
+    </article>
+
+    <article class="card">
+      <div class="icon">🦅</div>
+      <h3>Strength</h3>
+      <p>Daily compounding rewards designed to scale with the community.</p>
+    </article>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section id="calc" class="calc">
+    <h2 class="section-title">Freedom Calculator</h2>
+    <div class="calc-wrap">
+      <div class="panel">
+        <label>Initial Amount</label>
+        <input id="principal" type="number" value="1000" min="0" />
+        <label>Daily Rate (%)</label>
+        <input id="rate" type="number" value="0.5" step="0.01" />
+        <label>Days</label>
+        <input id="days" type="number" value="60" min="1" />
+        <div class="note">A = P × (1 + r)<sup>n</sup></div>
+        <div class="result">Projected Balance: <strong id="result">—</strong></div>
+      </div>
+
+      <aside class="aside">
+        <div class="ribbon">OFFICIAL • PEPE • COIN</div>
+        <p class="aside-copy">
+          Banks pay <span class="slash">0.01%</span>. We salute you
+          <strong>every day</strong>. Let freedom compound.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="grid">
+      <div>
+        <div class="foot-title">Resources</div>
+        <a href="#">Whitepaper</a>
+        <a href="#">Audit</a>
+        <a href="#">Brand Kit</a>
+      </div>
+      <div>
+        <div class="foot-title">Community</div>
+        <a href="#">Twitter</a>
+        <a href="#">Telegram</a>
+        <a href="#">Discord</a>
+      </div>
+      <div>
+        <div class="foot-title">More</div>
+        <a href="../">Main Site</a>
+        <a href="../meme/">Meme Mode</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+    <small>© <span id="yr"></span> PEPE COIN — Liberty Edition. Built in the USA.</small>
+  </footer>
+
+  <!-- Floating CA bubble -->
+  <button class="ca-bubble" type="button" aria-live="polite">
+    <span class="icon">🎆</span>
+    <span class="text">CA COMING SOON!</span>
+  </button>
+
+  <script>
+    // Formatting helper
+    const fmt = x => new Intl.NumberFormat(undefined,{maximumFractionDigits:2}).format(x);
+
+    function calc(){
+      const P = parseFloat(document.getElementById('principal').value)||0;
+      const r = (parseFloat(document.getElementById('rate').value)||0)/100;
+      const n = parseInt(document.getElementById('days').value)||0;
+      document.getElementById('result').textContent = '$' + fmt(P*Math.pow(1+r,n));
+    }
+    ['principal','rate','days'].forEach(id=>document.getElementById(id).addEventListener('input', calc));
+    calc();
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Visitors counter (starts at 5,000)
+    async function updateVisits() {
+      const NS='liberty-pepe-v1', KEY='usa-visits';
+      fetch(`https://api.countapi.xyz/create?namespace=${NS}&key=${KEY}&value=5000`).catch(()=>{});
+      const seen = localStorage.getItem('usa_seen');
+      const endpoint = seen ? 'get' : 'hit';
+      fetch(`https://api.countapi.xyz/${endpoint}/${NS}/${KEY}`)
+        .then(r=>r.json())
+        .then(d=>{
+          const el=document.getElementById('visitCount');
+          if(el && d && typeof d.value==='number') el.textContent = d.value.toLocaleString();
+          if(!seen) localStorage.setItem('usa_seen','1');
+        }).catch(()=>{});
+    }
+    updateVisits();
+  </script>
+</body>
+</html>
